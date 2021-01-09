@@ -6,8 +6,7 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_root", "_root", "{DFB0B84B-1200-4814-9822-625FBAC14C82}"
 	ProjectSection(SolutionItems) = preProject
 		Directory.Build.props = Directory.Build.props
-		.github\workflows\dotnet-core.yml = .github\workflows\dotnet-core.yml
-		..\Application.Hahn\NuGet.Config = ..\Application.Hahn\NuGet.Config
+		..\.github\workflows\dotnet-core.yml = ..\.github\workflows\dotnet-core.yml
 		Readme.md = Readme.md
 	EndProjectSection
 EndProject
