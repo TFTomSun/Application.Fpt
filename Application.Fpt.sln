@@ -5,34 +5,34 @@ VisualStudioVersion = 16.0.30128.36
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_root", "_root", "{DFB0B84B-1200-4814-9822-625FBAC14C82}"
 	ProjectSection(SolutionItems) = preProject
-		Directory.Build.props = Directory.Build.props
-		..\.github\workflows\dotnet-core.yml = ..\.github\workflows\dotnet-core.yml
-		Readme.md = Readme.md
+		src\Directory.Build.props = src\Directory.Build.props
+		.github\workflows\dotnet-core.yml = .github\workflows\dotnet-core.yml
+		src\Readme.md = src\Readme.md
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Thomas.Demo.Tests", "Thomas.Demo.Tests\Thomas.Demo.Tests.csproj", "{F2BFDC8B-A661-4DFE-A899-1CFC74B58A5D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Thomas.Demo.Tests", "src\Thomas.Demo.Tests\Thomas.Demo.Tests.csproj", "{F2BFDC8B-A661-4DFE-A899-1CFC74B58A5D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Thomas.Apis.Core", "Thomas.Apis.Core\Thomas.Apis.Core.csproj", "{8E4A2848-0AD3-4605-83C5-0888E870043F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Thomas.Apis.Core", "src\Thomas.Apis.Core\Thomas.Apis.Core.csproj", "{8E4A2848-0AD3-4605-83C5-0888E870043F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Thomas.Demo.Client.WpfApp", "Thomas.Demo.Client.WpfApp\Thomas.Demo.Client.WpfApp.csproj", "{628B4940-5B03-4590-BDE3-D9CE6E6201F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Thomas.Demo.Client.WpfApp", "src\Thomas.Demo.Client.WpfApp\Thomas.Demo.Client.WpfApp.csproj", "{628B4940-5B03-4590-BDE3-D9CE6E6201F7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Thomas.Demo.Client.ViewModels", "Thomas.Demo.Client.ViewModels\Thomas.Demo.Client.ViewModels.csproj", "{65D46892-6F54-4C86-8325-903B21E53DE0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Thomas.Demo.Client.ViewModels", "src\Thomas.Demo.Client.ViewModels\Thomas.Demo.Client.ViewModels.csproj", "{65D46892-6F54-4C86-8325-903B21E53DE0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Thomas.Apis.Presentation.Wpf", "Thomas.Apis.Presentation.Wpf\Thomas.Apis.Presentation.Wpf.csproj", "{63C7663E-DDE7-4A8F-AAAE-E5A4E90BE254}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Thomas.Apis.Presentation.Wpf", "src\Thomas.Apis.Presentation.Wpf\Thomas.Apis.Presentation.Wpf.csproj", "{63C7663E-DDE7-4A8F-AAAE-E5A4E90BE254}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Thomas.Apis.Presentation.ViewModels", "Thomas.Apis.Presentation.ViewModels\Thomas.Apis.Presentation.ViewModels.csproj", "{6FAC9606-C600-4B28-B0B9-2BE249BF3185}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Thomas.Apis.Presentation.ViewModels", "src\Thomas.Apis.Presentation.ViewModels\Thomas.Apis.Presentation.ViewModels.csproj", "{6FAC9606-C600-4B28-B0B9-2BE249BF3185}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Thomas.Apis.Presentation.Wpf.MaterialDesign", "Thomas.Apis.Presentation.Wpf.MaterialDesign\Thomas.Apis.Presentation.Wpf.MaterialDesign.csproj", "{DE92CBE7-0CF5-4A4E-8940-AD72F0E47944}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Thomas.Apis.Presentation.Wpf.MaterialDesign", "src\Thomas.Apis.Presentation.Wpf.MaterialDesign\Thomas.Apis.Presentation.Wpf.MaterialDesign.csproj", "{DE92CBE7-0CF5-4A4E-8940-AD72F0E47944}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apis", "Apis", "{B70AAD7B-7061-403C-BE6F-64FB9D1DE140}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Thomas.Apis.Presentation.Wpf.Core", "Thomas.Apis.Presentation.Wpf.Core\Thomas.Apis.Presentation.Wpf.Core.csproj", "{5D433E14-C453-4C18-85EF-F130A9258F6A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Thomas.Apis.Presentation.Wpf.Core", "src\Thomas.Apis.Presentation.Wpf.Core\Thomas.Apis.Presentation.Wpf.Core.csproj", "{5D433E14-C453-4C18-85EF-F130A9258F6A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Thomas.Demo.Client.Services", "Thomas.Demo.Client.Services\Thomas.Demo.Client.Services.csproj", "{E302E5B4-2131-4302-ACD0-78F0584D0737}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Thomas.Demo.Client.Services", "src\Thomas.Demo.Client.Services\Thomas.Demo.Client.Services.csproj", "{E302E5B4-2131-4302-ACD0-78F0584D0737}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thomas.Demo.Client.ConsoleApp", "Thomas.Demo.Client.ConsoleApp\Thomas.Demo.Client.ConsoleApp.csproj", "{15E5E4CC-425F-4160-B416-45077F8FA8DB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thomas.Demo.Client.ConsoleApp", "src\Thomas.Demo.Client.ConsoleApp\Thomas.Demo.Client.ConsoleApp.csproj", "{15E5E4CC-425F-4160-B416-45077F8FA8DB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Thomas.Apis.Presentation.CommandLine", "Thomas.Apis.Presentation.CommandLine\Thomas.Apis.Presentation.CommandLine.csproj", "{03408BAC-2B1D-4547-9BF8-89E3E09F2E12}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Thomas.Apis.Presentation.CommandLine", "src\Thomas.Apis.Presentation.CommandLine\Thomas.Apis.Presentation.CommandLine.csproj", "{03408BAC-2B1D-4547-9BF8-89E3E09F2E12}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
