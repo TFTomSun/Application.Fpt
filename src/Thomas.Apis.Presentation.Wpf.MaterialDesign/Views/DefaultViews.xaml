@@ -1,0 +1,12 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:viewmodels="clr-namespace:Thomas.Apis.Presentation.ViewModels;assembly=Thomas.Apis.Presentation.ViewModels"
+                    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+                    xmlns:command="clr-namespace:Thomas.Apis.Presentation.ViewModels.Command;assembly=Thomas.Apis.Presentation.ViewModels">
+
+
+    <DataTemplate x:Key="ViewModelField" DataType="{x:Type command:Icon}">
+        <materialDesign:PackIcon Kind="{Binding Path=IconName}" Foreground="{Binding Path=Color}"/>
+    </DataTemplate>
+
+</ResourceDictionary>

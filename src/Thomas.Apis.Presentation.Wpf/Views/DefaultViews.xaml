@@ -1,0 +1,128 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:viewModels="clr-namespace:Thomas.Apis.Presentation.ViewModels;assembly=Thomas.Apis.Presentation.ViewModels"
+                    xmlns:controls="clr-namespace:Thomas.Apis.Presentation.Wpf.Controls"
+                    xmlns:core="clr-namespace:Thomas.Apis.Presentation.Wpf.Core;assembly=Thomas.Apis.Presentation.Wpf.Core"
+                    xmlns:attached="clr-namespace:Thomas.Apis.Presentation.Wpf.Core.Attached;assembly=Thomas.Apis.Presentation.Wpf.Core"
+                    xmlns:layouts="clr-namespace:Thomas.Apis.Presentation.ViewModels.Layouts;assembly=Thomas.Apis.Presentation.ViewModels"
+                    xmlns:converters="clr-namespace:Thomas.Apis.Presentation.Wpf.Core.Converters;assembly=Thomas.Apis.Presentation.Wpf.Core"
+                    xmlns:viewModel="clr-namespace:Thomas.Apis.Presentation.ViewModels.Selection;assembly=Thomas.Apis.Presentation.ViewModels"
+                    xmlns:command="clr-namespace:Thomas.Apis.Presentation.ViewModels.Command;assembly=Thomas.Apis.Presentation.ViewModels"
+                    xmlns:dynamics="clr-namespace:Thomas.Apis.Presentation.ViewModels.Dynamics;assembly=Thomas.Apis.Presentation.ViewModels"
+                    xmlns:primitiveTypes="clr-namespace:Thomas.Apis.Presentation.ViewModels.PrimitiveTypes;assembly=Thomas.Apis.Presentation.ViewModels">
+
+    <!--Fallback templates use priority to downgrade them in the hierarchy -->
+
+    <!--Absolute Fallback don't change the key-->
+    <DataTemplate x:Key="ObjectTemplate" >
+        <TextBlock Text="No Template found"/>
+    </DataTemplate>
+    
+    <!--ViewModel Fallback-->
+    <DataTemplate x:Key="ViewModelTemplate" DataType="{x:Type viewModels:IViewModel}"  attached:DataTemplateExtensions.Priority="10" >
+        <controls:ResourceContentPresenter Content="{Binding  attached:BindingExtensions.ConverterType=converters:ViewModelToAutoGridViewModelConverter }"/>
+    </DataTemplate>
+
+    <!--End Of Fallback templates-->
+
+
+
+    <DataTemplate
+        x:Key="CommandView" DataType="{x:Type command:IAsyncCommand}">
+        <StackPanel>
+            <Button Command="{Binding Path=CoreCommand}"  >
+                <controls:AutoGrid RowSizes="Auto;Auto" ColumnSizes="Auto;Auto;Auto" >
+                    <controls:ResourceContentPresenter Content="{Binding Path=Appearance.IconBeforeText}"/>
+                    <TextBlock Text="{Binding Path=Appearance.Text}"/>
+                    <controls:ResourceContentPresenter Content="{Binding Path=Appearance.IconAfterText}"/>
+                </controls:AutoGrid>
+            </Button>
+            <ContentControl
+                Visibility="{Binding Path=IsExecuting, attached:BindingExtensions.ConverterType=BooleanToVisibilityConverter }" 
+                Content="{Binding Path=Appearance.Progress}">
+                <ContentControl.ContentTemplateSelector>
+                    <core:ResourceTemplateSelector/>
+                </ContentControl.ContentTemplateSelector>
+            </ContentControl>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="ViewModelField" DataType="{x:Type dynamics:ViewModelField}">
+        <controls:ResourceContentPresenter Content="{Binding Path=Value}"/>
+    </DataTemplate>
+
+    <DataTemplate x:Key="StringField" DataType="{x:Type primitiveTypes:StringField}">
+        <TextBox Text="{Binding Path=Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                 TextAlignment="{Binding Path=Settings.Alignment, attached:BindingExtensions.ConverterType=converters:EnumToEnumValueConverter }" 
+                 TextWrapping="{Binding Path=Settings.TextWrapping, attached:BindingExtensions.ConverterType=converters:BoolToTextWrappingConverter}" 
+                 IsReadOnly="{Binding Path=Settings.IsReadOnly}" />
+    </DataTemplate>
+
+ 
+
+
+    <DataTemplate x:Key="IconModel" DataType="{x:Type command:Icon}">
+        <!--No default support for icons-->
+    </DataTemplate>
+    <DataTemplate x:Key="ProgressModel" DataType="{x:Type command:Progress}">
+        <ProgressBar IsIndeterminate="{Binding Path=IsIndeterminate}" Value="{Binding Path=Value}"/>
+    </DataTemplate>
+
+    <DataTemplate x:Key="AutoGridViewModel" DataType="{x:Type layouts:AutoGridViewModel}">
+        <controls:AutoGrid 
+            ColumnSizes="{Binding Path=Settings.ColumnSizes, Mode=OneWay}" 
+            RowSizes="{Binding Path=Settings.RowSizes, Mode=OneWay}"
+            DefaultSize="{Binding Path=Settings.DefaultSize, Mode=OneWay}"
+            HorizontalLayout="{Binding Path=Settings.HorizontalLayout, Mode=OneWay}"
+            HorizontalAutoFill="{Binding Path=Settings.HorizontalAutoFill, Mode=OneWay}"
+            ItemsSource="{Binding Path=ViewModelProperties, Mode=OneWay}"
+            />
+    </DataTemplate>
+
+
+    <!--SelectionViewModel-->
+    <DataTemplate x:Key="SelectionTemplate" DataType="{x:Type viewModel:ISelectionViewModel}">
+        <ComboBox  IsEditable="{Binding Path=IsEditable}" VerticalContentAlignment="Center" 
+                   ItemsSource="{Binding Path=DisplayValues, Mode=OneWay}" 
+                   IsDropDownOpen="{Binding Path=IsSelectionVisible, Mode=TwoWay}"
+                   SelectedIndex="{Binding Path=SelectedIndex, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                   Text="{Binding Path=SelectedText, Mode=TwoWay, UpdateSourceTrigger=LostFocus}"
+        />
+    </DataTemplate>
+
+    <DataTemplate  x:Key="Field" DataType="{x:Type layouts:FieldViewModel}">
+        <controls:AutoGrid RowSizes="Auto;*">
+            <TextBlock Text="{Binding Path=Label}" FontWeight="Bold"/>
+            <controls:ResourceContentPresenter Margin="10,0,0,0" Content="{Binding Path=Content}"/>
+        </controls:AutoGrid>
+    </DataTemplate>
+
+    <DataTemplate  x:Key="Frame" DataType="{x:Type layouts:FrameViewModel}">
+        <Border 
+            x:Name="FrameBorder"
+            Margin="{Binding Path=Settings.Margin}">
+            <controls:ResourceContentPresenter Content="{Binding Path=Content}"/>
+        </Border>
+    </DataTemplate>
+    <DataTemplate  x:Key="GridCell" DataType="{x:Type layouts:GridCellViewModel}">
+        <!-- ReSharper disable Xaml.RedundantAttachedProperty -->
+        <Border
+            x:Name="GridCellBorder"
+            Grid.Column="{Binding Path=Settings.ColumnIndex}" 
+            Grid.Row="{Binding Path=Settings.RowIndex}" 
+            Grid.ColumnSpan="{Binding Path=Settings.ColumnSpan}" 
+            Grid.RowSpan="{Binding Path=Settings.RowSpan}" 
+            Margin="{Binding Path=Settings.Margin}">
+            <controls:ResourceContentPresenter Content="{Binding Path=Content}"/>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate x:Key="List" DataType="{x:Type layouts:IItemsViewModel}">
+        <ItemsControl ItemsSource="{Binding Path=Items}">
+            <ItemsControl.ItemTemplateSelector>
+                <core:ResourceTemplateSelector/>
+            </ItemsControl.ItemTemplateSelector> 
+        </ItemsControl>
+    </DataTemplate>
+
+</ResourceDictionary>

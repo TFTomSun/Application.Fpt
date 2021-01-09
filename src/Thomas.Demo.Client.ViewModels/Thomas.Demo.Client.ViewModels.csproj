@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Thomas.Apis.Presentation.ViewModels\Thomas.Apis.Presentation.ViewModels.csproj" />
+    <ProjectReference Include="..\Thomas.Demo.Client.Services\Thomas.Demo.Client.Services.csproj" />
+  </ItemGroup>
+
+</Project>
