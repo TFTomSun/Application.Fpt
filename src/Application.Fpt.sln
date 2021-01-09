@@ -33,6 +33,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Thomas.Demo.Client.Services
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thomas.Demo.Client.ConsoleApp", "Thomas.Demo.Client.ConsoleApp\Thomas.Demo.Client.ConsoleApp.csproj", "{15E5E4CC-425F-4160-B416-45077F8FA8DB}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Thomas.Apis.Presentation.CommandLine", "Thomas.Apis.Presentation.CommandLine\Thomas.Apis.Presentation.CommandLine.csproj", "{03408BAC-2B1D-4547-9BF8-89E3E09F2E12}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -79,6 +81,10 @@ Global
 		{15E5E4CC-425F-4160-B416-45077F8FA8DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15E5E4CC-425F-4160-B416-45077F8FA8DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15E5E4CC-425F-4160-B416-45077F8FA8DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03408BAC-2B1D-4547-9BF8-89E3E09F2E12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03408BAC-2B1D-4547-9BF8-89E3E09F2E12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03408BAC-2B1D-4547-9BF8-89E3E09F2E12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03408BAC-2B1D-4547-9BF8-89E3E09F2E12}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -89,6 +95,7 @@ Global
 		{6FAC9606-C600-4B28-B0B9-2BE249BF3185} = {B70AAD7B-7061-403C-BE6F-64FB9D1DE140}
 		{DE92CBE7-0CF5-4A4E-8940-AD72F0E47944} = {B70AAD7B-7061-403C-BE6F-64FB9D1DE140}
 		{5D433E14-C453-4C18-85EF-F130A9258F6A} = {B70AAD7B-7061-403C-BE6F-64FB9D1DE140}
+		{03408BAC-2B1D-4547-9BF8-89E3E09F2E12} = {B70AAD7B-7061-403C-BE6F-64FB9D1DE140}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C382F469-2212-451B-9D89-7CD1C62770A3}

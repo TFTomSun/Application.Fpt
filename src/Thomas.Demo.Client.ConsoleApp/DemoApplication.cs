@@ -1,9 +1,8 @@
 ﻿using CommandLine;
 using System;
-using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
+using Thomas.Apis.Presentation.CommandLine;
 using Thomas.Demo.Client.Services.WeatherStack;
-using Thomas.Demo.Client.ViewModels;
 
 namespace Thomas.Demo.Client.ConsoleApp
 {
@@ -15,41 +14,17 @@ namespace Thomas.Demo.Client.ConsoleApp
             public string Location { get; set; }
         }
 
-
-        static Options ParseArguments(string[] args)
-        {
-            var result = Parser.Default.ParseArguments<Options>(args)
-                .MapResult(o => o, e =>
+        static async Task Main(string[] args) => await new ConsoleApplication().RunAsync<Options>(args,
+            async options =>
+            {
+                var weatherData = await new WeatherStackService().QueryCurrentAsync(options.Location);
+                var recommondations = new WeatherEvalulationService().Evaluate(weatherData);
+                foreach (var recommondation in recommondations)
                 {
-                    Console.WriteLine("Please enter valid arguments:");
-                    var newArgs = Console.ReadLine();
-                    return ParseArguments(newArgs.Split(' '));
-                });
-            return result;
-        }
-        static async Task Main(string[] args) => await RunAsync(args);
-
-        static async Task RunAsync(params string[] args)
-        {
-            if (args.Length == 0)
-            {
-                args = new[] { "--help" };
-            }
-            var options = ParseArguments(args);
-            var weatherData = await new WeatherStackService().QueryCurrentAsync(options.Location);
-            var recommondations = new WeatherEvalulationService().Evaluate(weatherData);
-            foreach (var recommondation in recommondations)
-            {
-                Console.WriteLine(recommondation.Question);
-                Console.WriteLine(recommondation.Answer ? "yes" : "no");
-            }
-
-            Console.WriteLine("Would you like to run the program again? (y/n)");
-            if (Console.ReadLine() == "y")
-            {
-                await RunAsync();
-            }
-        }
-       
+                    Console.WriteLine(recommondation.Question);
+                    Console.WriteLine(recommondation.Answer ? "yes" : "no");
+                }
+                return 0;
+            });
     }
 }

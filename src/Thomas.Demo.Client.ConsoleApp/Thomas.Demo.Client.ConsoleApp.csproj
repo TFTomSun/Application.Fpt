@@ -4,10 +4,9 @@
 	  <OutputType>Exe</OutputType>
 	  <TargetFramework>net461</TargetFramework>
   </PropertyGroup>
+
 	<ItemGroup>
-		<PackageReference Include="CommandlineParser" Version="*" />
-	</ItemGroup>
-	<ItemGroup>
+	  <ProjectReference Include="..\Thomas.Apis.Presentation.CommandLine\Thomas.Apis.Presentation.CommandLine.csproj" />
 	  <ProjectReference Include="..\Thomas.Demo.Client.ViewModels\Thomas.Demo.Client.ViewModels.csproj" />
 	</ItemGroup>
 </Project>
