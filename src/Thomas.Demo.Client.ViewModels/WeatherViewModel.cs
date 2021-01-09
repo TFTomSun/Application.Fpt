@@ -14,9 +14,9 @@ using Thomas.Demo.Client.Services.WeatherStack.Model;
 
 namespace Thomas.Demo.Client.ViewModels
 {
-    public class WeatherResponsViewModel : ViewModel
+    public class WeatherViewModel : ViewModel
     {
-        public WeatherResponsViewModel(ServiceResponse weatherData, IViewFacade viewFacade, WeatherCodeService weatherCodeService, WeatherEvalulationService evaluationService)
+        public WeatherViewModel(WeatherQueryResponse weatherData, IViewFacade viewFacade, WeatherCodeService weatherCodeService, WeatherRecommendationService evaluationService)
         {
             WeatherData = weatherData;
             ViewFacade = viewFacade;
@@ -25,17 +25,17 @@ namespace Thomas.Demo.Client.ViewModels
         }
 
         [View.Layout.Field("Recommondations")]
-        public ListViewModel<WeatherRecommondationViewModel> Recommondations => this.Get(
-            f => f.Collection(this.EvaluationService.Evaluate(this.WeatherData).Select(x => new WeatherRecommondationViewModel(x.Question, x.Answer))));
+        public ListViewModel<WeatherRecommendationViewModel> Recommondations => this.Get(
+            f => f.Collection(this.EvaluationService.Get(this.WeatherData).Select(x => new WeatherRecommendationViewModel(x.Question, x.Answer))));
 
         [View.Layout.Field]
         public IAsyncCommand Save => this.Get(f => f.Command(this.SaveAsync, "Save Weather Data"));
 
 
-        public ServiceResponse WeatherData { get; }
+        public WeatherQueryResponse WeatherData { get; }
         public IViewFacade ViewFacade { get; }
         public WeatherCodeService WeatherCodeService { get; }
-        public WeatherEvalulationService EvaluationService { get; }
+        public WeatherRecommendationService EvaluationService { get; }
 
 
         public async Task SaveAsync()

@@ -7,9 +7,9 @@ using Thomas.Apis.Presentation.ViewModels.Views;
 namespace Thomas.Demo.Client.ViewModels
 {
     [View.Layout.Grid(ColumnSizes = "*;Auto", DefaultSizeIsAuto = true)]
-    public class WeatherRecommondationViewModel :ViewModel
+    public class WeatherRecommendationViewModel :ViewModel
     {
-        public WeatherRecommondationViewModel(string question, bool answer)
+        public WeatherRecommendationViewModel(string question, bool answer)
         {
             Question = question;
             this.Answer = answer ? (PackIconKind.Check, nameof(Color.Green)) :(PackIconKind.Denied, nameof(Color.Red));

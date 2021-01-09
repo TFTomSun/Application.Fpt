@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="WeatherStack\Model\wwoConditionCodes.xml" />
+    <EmbeddedResource Include="WeatherCode\Resources\wwoConditionCodes.xml" />
   </ItemGroup>
 
   <ItemGroup>

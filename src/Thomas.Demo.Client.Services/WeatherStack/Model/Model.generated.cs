@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 namespace Thomas.Demo.Client.Services.WeatherStack.Model
 {
-    public class ServiceResponse
+    public class WeatherQueryResponse
     {
         public Request request { get; set; }
         public Location location { get; set; }
