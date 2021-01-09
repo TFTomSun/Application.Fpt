@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.ObjectModel;
-using System.Diagnostics.CodeAnalysis;
-using System.Linq;
 using System.Runtime.CompilerServices;
 using Thomas.Apis.Core.DotNet;
 using Thomas.Apis.Presentation.ViewModels.Dynamics;
-using Thomas.Apis.Presentation.ViewModels.Layouts;
 
 namespace Thomas.Apis.Presentation.ViewModels
 {

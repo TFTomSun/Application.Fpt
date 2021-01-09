@@ -1,15 +1,12 @@
 
 using System;
 using System.ComponentModel;
-using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Interop;
 using Thomas.Apis.Core;
 
 public static class DependencyObjectExtensions

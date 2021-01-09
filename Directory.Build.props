@@ -1,12 +1,11 @@
 <Project>
   <PropertyGroup>
-    <Nullable>enable</Nullable>
+    <!--<Nullable>enable</Nullable>-->
 	  <LangVersion>latest</LangVersion>
     <!--<TreatWarningsAsErrors>true</TreatWarningsAsErrors>-->
 
-    <!--Supress: Unable to load Analyzer assembly /github/home/.nuget/packages/microsoft.aspnetcore.mvc.analyzers/2.2.0/analyzers/dotnet/cs/Microsoft.AspNetCore.Mvc.Analyzers.dll : Assembly with same name is already loaded-->
-    <NoWarn>CS8034</NoWarn>
+    <NoWarn>CS8632</NoWarn>
 
-    <GenerateDocumentationFile>$(MSBuildProjectName.EndsWith('.Tests').Equals(false))</GenerateDocumentationFile>
+    <!--<GenerateDocumentationFile>$(MSBuildProjectName.EndsWith('.Tests').Equals(false))</GenerateDocumentationFile>-->
   </PropertyGroup>
 </Project>

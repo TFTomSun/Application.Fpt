@@ -1,5 +1,4 @@
 ﻿using Autofac;
-using System;
 using System.Reflection;
 using System.Windows;
 using Thomas.Apis.Presentation.Wpf;
@@ -13,8 +12,6 @@ public static class Extensions
         return app;
     }
 
-  
-
     public static int Run<TModel>(this Application app, Size? defaultWindowSize, params Assembly[] serviceAssemblies)
     {
         var window = app.MainWindow ?? new DefaultMainWindow();
@@ -23,7 +20,7 @@ public static class Extensions
             window.Width = size.Width;
             window.Height = size.Height;
         }
-        var appContainer = new Bootstrap().Build<TModel>(window, serviceAssemblies);
+        var appContainer = new WpfAppBootstrap().Build<TModel>(window, serviceAssemblies);
         window.DataContext = appContainer.Resolve<TModel>();
         app.Resources.AddDefaultViews();
         return app.Run(window);

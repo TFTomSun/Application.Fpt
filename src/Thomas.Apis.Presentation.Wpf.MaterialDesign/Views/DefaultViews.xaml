@@ -6,7 +6,7 @@
 
 
     <DataTemplate x:Key="ViewModelField" DataType="{x:Type command:Icon}">
-        <materialDesign:PackIcon Kind="{Binding Path=IconName}" Foreground="{Binding Path=Color}"/>
+        <materialDesign:PackIcon   VerticalAlignment="Center" VerticalContentAlignment="Center" Kind="{Binding Path=IconName}" Foreground="{Binding Path=Color}"/>
     </DataTemplate>
 
 </ResourceDictionary>

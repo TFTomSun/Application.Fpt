@@ -6,10 +6,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using Thomas.Apis.Core;
-using Thomas.Apis.Core.DotNet;
 using Thomas.Apis.Core.New;
-using Thomas.Apis.Presentation.ViewModels;
-using Thomas.Apis.Presentation.ViewModels.Dynamics;
 using Thomas.Apis.Presentation.Wpf.Core;
 
 namespace Thomas.Apis.Presentation.Wpf.Controls

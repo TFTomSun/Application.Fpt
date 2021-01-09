@@ -9,8 +9,17 @@ namespace Thomas.Apis.Presentation.CommandLine
         public async Task<int> RunAsync<T>(string[]? args, Func<T,Task<int>> asyncAppRun, bool askForRerun = true)
         {
             var options = ParseArguments<T>(args);
-            var exitCode = await asyncAppRun(options);
 
+            int exitCode;
+            try
+            {
+                 exitCode = await asyncAppRun(options);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                exitCode = -1;
+            }
             if (askForRerun)
             {
                 Console.WriteLine("Would you like to run the program again? (y/n)");

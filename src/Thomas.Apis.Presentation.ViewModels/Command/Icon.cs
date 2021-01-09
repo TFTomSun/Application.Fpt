@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing;
 using Thomas.Apis.Core.New;
 using Thomas.Apis.Presentation.ViewModels.Views;
 

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Windows;
-using Thomas.Apis.Presentation.Wpf.Views;
+﻿using System.Windows;
 
 namespace Thomas.Apis.Presentation.Wpf
 {

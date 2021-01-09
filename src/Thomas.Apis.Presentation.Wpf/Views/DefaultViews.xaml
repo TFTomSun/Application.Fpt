@@ -55,7 +55,8 @@
         <TextBox Text="{Binding Path=Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                  TextAlignment="{Binding Path=Settings.Alignment, attached:BindingExtensions.ConverterType=converters:EnumToEnumValueConverter }" 
                  TextWrapping="{Binding Path=Settings.TextWrapping, attached:BindingExtensions.ConverterType=converters:BoolToTextWrappingConverter}" 
-                 IsReadOnly="{Binding Path=Settings.IsReadOnly}" />
+                 IsReadOnly="{Binding Path=Settings.IsReadOnly}"
+                 />
     </DataTemplate>
 
  

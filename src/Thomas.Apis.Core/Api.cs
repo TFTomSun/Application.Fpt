@@ -1,10 +1,4 @@
-﻿using System;
-using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Reflection;
-using Thomas.Apis.Core.Extendable;
-
-namespace Thomas.Apis.Core
+﻿namespace Thomas.Apis.Core
 {
     /// <summary>
     /// An common entry point for APIs and Services

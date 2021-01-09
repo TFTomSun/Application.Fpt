@@ -1,16 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 using System.Threading.Tasks;
-using Thomas.Apis.Core;
 
 /// <summary>
-    /// Provides common framework extensions.
-    /// </summary>
-    public static class CommonExtensions
+/// Provides common framework extensions.
+/// </summary>
+public static class CommonExtensions
     {
         ///// <summary>
         ///// 

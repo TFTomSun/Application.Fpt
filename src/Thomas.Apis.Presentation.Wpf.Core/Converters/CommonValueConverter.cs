@@ -1,13 +1,11 @@
 using System;
-using System.Collections;
 using System.Globalization;
-using System.Reflection;
 using Thomas.Apis.Core.Extendable;
 
 namespace Thomas.Apis.Presentation.Wpf.Core.Converters
 {
 
-    
+
     /// <summary>
     /// A base class for value converters
     /// </summary>

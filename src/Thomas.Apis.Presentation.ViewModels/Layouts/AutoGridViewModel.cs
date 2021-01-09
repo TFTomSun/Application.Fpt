@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 using Thomas.Apis.Core.New;
-using Thomas.Apis.Presentation.ViewModels.Command;
 using Thomas.Apis.Presentation.ViewModels.Dynamics;
 
 namespace Thomas.Apis.Presentation.ViewModels.Layouts

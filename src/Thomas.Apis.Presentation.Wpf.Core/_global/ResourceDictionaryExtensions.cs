@@ -5,7 +5,6 @@ using System.Reflection;
 using System.Windows;
 using System.Windows.Media;
 using Thomas.Apis.Core.New;
-using Thomas.Apis.Presentation.Wpf.Core.Attached;
 
 // ReSharper disable once CheckNamespace
 public static class ResourceDictionaryExtensions

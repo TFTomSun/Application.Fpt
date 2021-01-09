@@ -1,6 +1,5 @@
 ﻿using RestSharp;
 using System;
-using System.Text;
 using System.Threading.Tasks;
 using Thomas.Apis.Core;
 using Thomas.Apis.Core.Extendable;
@@ -30,7 +29,9 @@ namespace Thomas.Demo.Client.Services.WeatherStack
         }
 
         public  Task<WeatherQueryResponse> QueryCurrentAsync(string query)
-             => this.Client.GetAsync<WeatherQueryResponse>("current", ("query", query));
+             => this.Client.GetAsync<WeatherQueryResponse,ErrorResponse>("current",
+                 e=>e.error?.info,
+                 ("query", query.ToNullIfEmpty()));
 
     }
     

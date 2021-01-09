@@ -4,6 +4,15 @@ using Thomas.Apis.Core.New;
 
 namespace Thomas.Apis.Presentation.Wpf.Core.Converters
 {
+    public class BoolNegationConverter : StaticValueConverter<bool?, bool?>
+    {
+        protected override IEnumerable<(bool? ModelValue, bool? ViewValue)> GetMapping()
+        {
+            yield return (true, false);
+            yield return (false, true);
+            yield return (null, null);
+        }
+    }
     /// <summary>
     /// A value converter from
     /// </summary>

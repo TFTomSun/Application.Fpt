@@ -15,16 +15,22 @@ namespace Thomas.Demo.Client.ViewModels
     [View.Layout.Grid(ColumnSizes = "*;Auto",  DefaultSizeIsAuto=true)]
     public class MainViewModel : ViewModel
     {
+        private IViewFacade ViewFacade { get; }
         private WeatherStackService WeatherService { get; }
-        private Func<WeatherQueryResponse, WeatherViewModel> WeatherResponseViewModelFactory { get; }
+        private Func<WeatherQueryResponse, WeatherViewModel> WeatherViewModelFactory { get; }
+        private Func<string, ErrorViewModel> ErrorViewModelFactory { get; }
 
         /// <summary>
         /// Creates an instance of the <see cref="MainViewModel"/>
         /// </summary>
-        public MainViewModel(WeatherStackService weatherService, Func<WeatherQueryResponse,WeatherViewModel> weatherResponseViewModelFactory)
+        public MainViewModel(IViewFacade viewFacade, WeatherStackService weatherService, 
+            Func<WeatherQueryResponse,WeatherViewModel> weatherViewModelFactory,
+            Func<string, ErrorViewModel> errorViewModelFactory)
         {
+            ViewFacade = viewFacade;
             this.WeatherService = weatherService;
-            WeatherResponseViewModelFactory = weatherResponseViewModelFactory;
+            this.WeatherViewModelFactory = weatherViewModelFactory;
+            ErrorViewModelFactory = errorViewModelFactory;
         }
 
         /// <summary>
@@ -35,7 +41,6 @@ namespace Thomas.Demo.Client.ViewModels
             get => this.Get(()=> "Weather Demo Client");
             set => this.Set(value);
         }
-
 
         /// <summary>
         /// Gets or sets the city or zip code for which the weather data shall be retrieved.
@@ -52,20 +57,23 @@ namespace Thomas.Demo.Client.ViewModels
         /// </summary>
         [View.Layout.Field]
         public IAsyncCommand Query => this.Get(f => f.Command(
-            async ()=>this.Result =this.WeatherResponseViewModelFactory(
+            async ()=>this.Result =this.WeatherViewModelFactory(
                 await this.WeatherService.QueryCurrentAsync(this.CityNameOrZipCode)), "Show Weather"));
+
+        public override void OnError(Exception ex)
+        {
+            this.Result = this.ErrorViewModelFactory(ex.Message);
+        }
 
 
         /// <summary>
         /// Will be set when the weather data has been queried.
         /// </summary>
         [View.Layout.Grid.Cell(ColumnSpan =2)]
-        public WeatherViewModel Result
+        public IViewModel Result
         {
-            get => this.Get<WeatherViewModel>();
+            get => this.Get<IViewModel>();
             private set => this.Set(value);
         }
-        
     }
-
 }
