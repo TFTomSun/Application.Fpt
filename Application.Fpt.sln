@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.30128.36
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_root", "_root", "{DFB0B84B-1200-4814-9822-625FBAC14C82}"
 	ProjectSection(SolutionItems) = preProject
-		src\Directory.Build.props = src\Directory.Build.props
+		Directory.Build.props = Directory.Build.props
 		.github\workflows\dotnet-core.yml = .github\workflows\dotnet-core.yml
-		src\Readme.md = src\Readme.md
+		Readme.md = Readme.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Thomas.Demo.Tests", "src\Thomas.Demo.Tests\Thomas.Demo.Tests.csproj", "{F2BFDC8B-A661-4DFE-A899-1CFC74B58A5D}"
@@ -30,7 +30,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Thomas.Apis.Presentation.Wp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Thomas.Demo.Client.Services", "src\Thomas.Demo.Client.Services\Thomas.Demo.Client.Services.csproj", "{E302E5B4-2131-4302-ACD0-78F0584D0737}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thomas.Demo.Client.ConsoleApp", "src\Thomas.Demo.Client.ConsoleApp\Thomas.Demo.Client.ConsoleApp.csproj", "{15E5E4CC-425F-4160-B416-45077F8FA8DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Thomas.Demo.Client.ConsoleApp", "src\Thomas.Demo.Client.ConsoleApp\Thomas.Demo.Client.ConsoleApp.csproj", "{15E5E4CC-425F-4160-B416-45077F8FA8DB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Thomas.Apis.Presentation.CommandLine", "src\Thomas.Apis.Presentation.CommandLine\Thomas.Apis.Presentation.CommandLine.csproj", "{03408BAC-2B1D-4547-9BF8-89E3E09F2E12}"
 EndProject
