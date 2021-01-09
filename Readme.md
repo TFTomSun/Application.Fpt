@@ -5,6 +5,7 @@
 ### Prerequsites
 * Latest released version of Visual Studio 2019
 * Latest version of .NET SDK (normally comes with Visual Studio 2019 installation)
+* To be able to use the apps and run the tests you need to configure the weather stack API key as an environment variable 'WeatherStackApiKey'.
 
 ### Build
 #### Visual Studio
