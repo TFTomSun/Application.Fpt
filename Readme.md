@@ -30,4 +30,4 @@ All code in the solution is written by me. All referenced nuget packages (e.g. M
 
 ## Notes
 The underlying framework '**Thomas.Apis.***' is not feature complete and not cleaned up, because I just reused and implemented parts that I needed for that Demo. In the same time it contains some functionality that is not used, because it was a bit difficulty to only integrate the parts that I needed.
-The framework is also not fully compatible with the Nullables, which leads to some compiler warnings.
+The framework is also not fully compatible with the new C# Nullables feature, which leads to some compiler warnings.

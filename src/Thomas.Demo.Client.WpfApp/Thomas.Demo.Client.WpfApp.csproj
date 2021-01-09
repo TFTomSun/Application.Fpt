@@ -2,10 +2,12 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net48</TargetFramework>
+    <TargetFramework>net5.0-windows</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Thomas.Apis.Presentation.Wpf.MaterialDesign\Thomas.Apis.Presentation.Wpf.MaterialDesign.csproj" />
+    <ProjectReference Include="..\Thomas.Apis.Presentation.Wpf\Thomas.Apis.Presentation.Wpf.csproj" />
     <ProjectReference Include="..\Thomas.Demo.Client.ViewModels\Thomas.Demo.Client.ViewModels.csproj" />
   </ItemGroup>
 
